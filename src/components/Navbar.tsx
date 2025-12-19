@@ -5,26 +5,40 @@ import { ScrollTrigger
 import HoverLinks from "./HoverLinks";
 import { gsap
 } from "gsap";
-import { ScrollSmoother
-} from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+gsap.registerPlugin(ScrollTrigger);
+
+// Smoother replacement object for compatibility
+export const smoother = {
+  _paused: true,
+  paused(value?: boolean) {
+    if (value !== undefined) {
+      this._paused = value;
+      document.body.style.overflow = value ? 'hidden' : 'auto';
+    }
+    return this._paused;
+  },
+  scrollTop(value?: number) {
+    if (value !== undefined) {
+      window.scrollTo({ top: value, behavior: 'instant' });
+    }
+    return window.scrollY;
+  },
+  scrollTo(target: string | null, smooth?: boolean, _position?: string) {
+    if (target) {
+      const element = document.querySelector(target);
+      if (element) {
+        element.scrollIntoView({ behavior: smooth ? 'smooth' : 'instant', block: 'start' });
+      }
+    }
+  }
+};
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
-    smoother.scrollTop(0);
+    // Initialize scroll position
+    window.scrollTo(0, 0);
     smoother.paused(true);
 
     let links = document.querySelectorAll(".header ul a");
@@ -35,14 +49,13 @@ const Navbar = () => {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section,
-          true,
-          "top top");
+          smoother.scrollTo(section, true, "top top");
         }
       });
     });
+    
     window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
+      ScrollTrigger.refresh(true);
     });
   },
   []);
