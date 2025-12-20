@@ -62,8 +62,8 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="logo.png" className="navbar-title" data-cursor="disable">
-          Logo
+        <a href="/" className="navbar-title" data-cursor="disable">
+          <img src="/images/logo.png" alt="Logo" className="navbar-logo" />
         </a>
         <a
           href="mailto:gmmillat1100@gmail.com"
