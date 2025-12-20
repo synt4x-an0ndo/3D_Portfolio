@@ -352,6 +352,9 @@
   .loader-title {
     font-size: 16px;
   }
+  .loader-logo {
+    height: 36px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .loading-header {
@@ -360,4 +363,13 @@
   .loader-title {
     font-size: 18px;
   }
+  .loader-logo {
+    height: 40px;
+  }
+}
+
+.loader-logo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
