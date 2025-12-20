@@ -100,7 +100,7 @@ const Work = () => {
               <h4>Tools and features</h4>
               <p>Full-stack, Community Platform</p>
             </div>
-            <WorkImage image="/images/placeholder.webp" alt="SkillSwap" />
+            <WorkImage image="/images/skillswap.jpeg" alt="SkillSwap" />
           </div>
 
           <div className="work-box">
@@ -130,7 +130,7 @@ const Work = () => {
               <h4>Tools and features</h4>
               <p>HTML, CSS, Interactive Design</p>
             </div>
-            <WorkImage image="/images/placeholder.webp" alt="HarmoniQ" />
+            <WorkImage image="/images/harmoniq.png" alt="HarmoniQ" />
           </div>
         </div>
       </div>
