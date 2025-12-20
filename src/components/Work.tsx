@@ -70,7 +70,7 @@ const Work = () => {
               <h4>Tools and features</h4>
               <p>JavaScript, CSS, HTML</p>
             </div>
-            <WorkImage image="/images/confidenSee.jpeg" alt="ConfidenSee" />
+            <WorkImage image="/images/confidenSee.png.jpeg" alt="ConfidenSee" />
           </div>
 
           <div className="work-box">
@@ -85,7 +85,7 @@ const Work = () => {
               <h4>Tools and features</h4>
               <p>HTML, CSS, Interactive UI</p>
             </div>
-            <WorkImage image="/images/ingre.png" alt="IngreChec" />
+            <WorkImage image="/images/ingrechec.jpeg" alt="IngreChec" />
           </div>
 
           <div className="work-box">
