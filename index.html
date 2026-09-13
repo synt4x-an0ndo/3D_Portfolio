@@ -36,6 +36,8 @@
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="GM Anondo — G.M. Millat, Frontend Developer from Bangladesh"/>
+<meta property="og:image" content="https://gmanondo.me/anondo-2.jpeg"/>
+<meta property="og:image:alt" content="G.M. Millat (GM Anondo) portrait"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="profile:first_name" content="G.M."/>
 <meta property="profile:last_name" content="Millat"/>
@@ -71,11 +73,20 @@
   "name": "G.M. Millat",
   "alternateName": ["GM Anondo", "gm anondo", "gmanondo", "Gm Anondo"],
   "url": "https://gmanondo.me/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://gmanondo.me/anondo.jpg",
-    "caption": "G.M. Millat (GM Anondo) — Frontend Developer"
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://gmanondo.me/anondo.jpg",
+      "contentUrl": "https://gmanondo.me/anondo.jpg",
+      "caption": "G.M. Millat (GM Anondo) — Frontend Developer"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://gmanondo.me/anondo-2.jpeg",
+      "contentUrl": "https://gmanondo.me/anondo-2.jpeg",
+      "caption": "G.M. Millat (GM Anondo) portrait"
+    }
+  ],
   "description": "G.M. Millat (GM Anondo) is a Frontend Developer, CSE graduate, startup builder, and research contributor from Bangladesh. Creator of CareerEdge.AI and IngreChec, with ML research achieving up to 99.58% accuracy.",
   "jobTitle": "Frontend Developer, COO & CTO",
   "hasOccupation": {
@@ -430,13 +441,15 @@ nav{display:flex;align-items:center;gap:2px;flex-shrink:0}
 
 .hero-avatar{
   position:relative;
-  width:112px;
+  width:232px;
   height:112px;
   flex-shrink:0;
   align-self:flex-start;
+  display:flex;
+  gap:8px;
 }
 @media(min-width:768px){
-  .hero-avatar{width:128px;height:128px;margin-top:10px}
+  .hero-avatar{width:264px;height:128px;margin-top:10px}
 }
 
 .hero-avatar-img{
@@ -449,7 +462,8 @@ nav{display:flex;align-items:center;gap:2px;flex-shrink:0}
 }
 
 .hero-avatar-placeholder{
-  width:100%;height:100%;
+  width:112px;height:112px;
+  flex:0 0 auto;
   display:flex;align-items:center;justify-content:center;
   border-radius:6px;
   border:1px solid var(--border);
@@ -459,6 +473,9 @@ nav{display:flex;align-items:center;gap:2px;flex-shrink:0}
   font-weight:600;
   color:var(--muted-foreground);
   letter-spacing:-.04em;
+}
+@media(min-width:768px){
+  .hero-avatar-placeholder{width:128px;height:128px}
 }
 
 .hero-text{display:flex;flex-direction:column;gap:8px}
@@ -1087,7 +1104,10 @@ main{flex:1;display:flex;flex-direction:column}
             <div class="hero-avatar fade-up-sm">
               
               <div class="hero-avatar-placeholder">
-  <img src="anondo-2.jpeg" alt="GM Anondo — G.M. Millat, Frontend Developer from Bangladesh" width="120" height="120" loading="eager" fetchpriority="high">              
+  <img src="anondo-2.jpeg" alt="GM Anondo — G.M. Millat, Frontend Developer from Bangladesh" width="120" height="120" loading="eager" fetchpriority="high">
+              </div>
+              <div class="hero-avatar-placeholder">
+  <img src="anondo.jpg" alt="G.M. Millat (GM Anondo) portrait" width="120" height="120" loading="lazy">
               </div>
             </div>
             <div class="hero-text">
